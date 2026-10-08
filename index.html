@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة مصر الذكية للعمل المناخي - Climate Egypt</title>
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #111; background-color: #f4f7f4; }
+        
+        /* عناوين بارزة وقوية */
+        h1, h2, h3, h4, h5, h6 { color: #0d3b11 !important; font-weight: 700 !important; }
+        
+        /* القائمة العلوية */
+        .navbar-dark .navbar-nav .nav-link { color: #ffffff !important; font-size: 1.05rem; position: relative; padding-bottom: 6px; }
+        .navbar-dark .navbar-nav .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; right: 50%; background-color: #ffffff; transition: all 0.3s ease; }
+        .navbar-dark .navbar-nav .nav-link:hover::after { width: 100%; right: 0; }
+
+        /* إطار الصورة الرئيسية بدون أي قص نهائياً */
+        .hero-img-container {
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            background-color: #ffffff;
+        }
+        .hero-img-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(46, 125, 50, 0.3);
+        }
+        .hero-img-container img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: auto;
+            object-fit: contain !important;
+        }
+        .hero-img-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* الحركة التفاعلية للكروت والبطاقات */
+        .card, .stat-card {
+            background-color: #ffffff !important;
+            border: 1px solid #dcdcdc !important;
+            transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+            cursor: pointer;
+        }
+        .card:hover, .stat-card:hover {
+            transform: translateY(-10px) scale(1.02) !important;
+            box-shadow: 0 15px 30px rgba(13, 59, 17, 0.25) !important;
+            border-color: #2e7d32 !important;
+        }
+
+        /* حركة التكبير للأيقونات */
+        i { transition: transform 0.35s ease !important; }
+        .card:hover i, .stat-card:hover i { transform: scale(1.2) rotate(6deg) !important; }
+
+        .btn-success { background-color: #2e7d32 !important; border-color: #2e7d32 !important; transition: all 0.3s ease !important; }
+        .btn-success:hover { background-color: #1b5e20 !important; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="fa-solid fa-leaf me-2"></i>Climate Egypt
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#suez-initiatives">مبادرات السويس</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team-activity">توثيق الفريق</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#climate-infographics">الوعي البيئي</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#calculators">الحاسبات التفاعلية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quiz">اختبار الوعي</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-5 bg-light text-center shadow-sm">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-success mb-3">منصة مصر الذكية للعمل المناخي</h1>
+            <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px;">مبادرة طلابية متكاملة للتوعية بالتغيرات المناخية وتوظيف التكنولوجيا لأجل مستقبل مستدام لمصر</p>
+            
+            <!-- صورة الرئيسية كاملة بدون أي قطع -->
+            <div class="hero-img-container mx-auto mb-4" style="max-width: 950px;">
+                <img src="hero.jpg" alt="Climate Egypt Hero" class="img-fluid rounded-4">
+            </div>
+            
+            <a href="#calculators" class="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow">ابدأ التفاعل مع المنصة <i class="fa-solid fa-arrow-down ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- إحصائيات وأرقام استهداف المنصة -->
+    <section id="stats" class="py-5" style="background-color: #1b5e20;">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 shadow h-100">
+                        <i class="fa-solid fa-users fa-3x text-warning mb-3"></i>
+                        <h2 class="fw-bold text-dark mb-2" style="font-size: 2.5rem;">10,000+</h2>
+                        <p class="text-dark fs-5 fw-bold mb-0">طالب وطالبة مستهدفين عبر المنصة في مصر</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 shadow h-100">
+                        <i class="fa-solid fa-school fa-3x text-warning mb-3"></i>
+                        <h2 class="fw-bold text-dark mb-2" style="font-size: 2.5rem;">50+</h2>
+                        <p class="text-dark fs-5 fw-bold mb-0">مدرسة مستهدفة للتحول الأخضر المستدام</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 shadow h-100">
+                        <i class="fa-solid fa-seedling fa-3x text-warning mb-3"></i>
+                        <h2 class="fw-bold text-dark mb-2" style="font-size: 2.5rem;">100%</h2>
+                        <p class="text-dark fs-5 fw-bold mb-0">توعية مناخية بيئية وتفاعلية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مبادرات محافظة السويس الخضراء -->
+    <section id="suez-initiatives" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-success fw-bold text-center mb-2">مبادرات محافظة السويس للتحول الأخضر</h2>
+            <p class="text-muted text-center mb-5">جهود المحافظة في دعم استراتيجية مصر لمواجهة التغيرات المناخية</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
+                        <i class="fa-solid fa-bolt fa-3x mb-3" style="color: #2e7d32;"></i>
+                        <h5 class="fw-bold">مشروعات الهيدروجين الأخضر</h5>
+                        <p class="text-muted">الاستثمار في الطاقة النظيفة والتكنولوجيا الخضراء بالمنطقة الاقتصادية لقناة السويس.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
+                        <i class="fa-solid fa-water fa-3x mb-3" style="color: #0288d1;"></i>
+                        <h5 class="fw-bold">حماية البيئة البحرية</h5>
+                        <p class="text-muted">حملات حماية خليج السويس والتنوع البيولوجي والشعاب المرجانية من التلوث والارتفاع الحراري.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
+                        <i class="fa-solid fa-seedling fa-3x mb-3" style="color: #4caf50;"></i>
+                        <h5 class="fw-bold">مبادرة المدارس الخضراء</h5>
+                        <p class="text-muted">تشجير المدارس الثانوية وترشيد استهلاك الطاقة وفصل النفايات وإعادة التدوير بالسويس.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم توثيق أنشطة الفريق ومعرض الصور مدرسة السويس الثانوية بنات -->
+    <section id="team-activity" class="py-5">
+        <div class="container text-center">
+            <h2 class="text-success fw-bold mb-2">توثيق أنشطة فريق العمل بمدرسة السويس الثانوية بنات</h2>
+            <p class="text-muted mb-5">مراحل العمل الجماعي والبرمجة والتوعية الميدانية داخل المدرسة</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-3">
+                        <img src="coding-team.png" alt="طالبات مدرسة السويس الثانوية بنات أثناء البرمجة" class="img-fluid rounded-3 shadow-sm" style="max-height: 380px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-dark mt-2">مناقشة الأفكار وتصميم الأكواد البرمجية</h5>
+                            <p class="card-text text-muted">جلسات العصف الذهني والبرمجة لبناء واجهات المنصة بمدرسة السويس الثانوية بنات.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-3">
+                        <img src="team-collage.png" alt="معرض أنشطة مدرسة السويس الثانوية بنات" class="img-fluid rounded-3 shadow-sm" style="max-height: 380px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-dark mt-2">توثيق الفعاليات والمعرض المدرسي</h5>
+                            <p class="card-text text-muted">عرض أهداف المبادرة المناخية والحلول التكنولوجية داخل مدرسة السويس الثانوية بنات.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإنفوجرافيك والوعي البيئي -->
+    <section id="climate-infographics" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="text-success fw-bold mb-2">الوعي المناخي والحلول المستدامة</h2>
+            <p class="text-muted mb-5">وسائط توضيحية لتبسيط مفاهيم التغير المناخي والانتقال للطاقة النظيفة</p>
+            
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="card shadow border-0 rounded-4 overflow-hidden p-2">
+                        <img src="infographic-full.jfif" alt="إنفوجرافيك التغير المناخي والحلول" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-2">
+                        <img src="infographic-clean.jfif" alt="البدائل النظيفة والطاقة الأحفورية" class="img-fluid rounded-3">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-2">
+                        <img src="infographic-solutions.jfif" alt="حلول التغير المناخي والآثار" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section (الحاسبات التفاعلية) -->
+    <section id="calculators" class="py-5">
+        <div class="container">
+            <h2 class="text-success fw-bold text-center mb-5">الأدوات والحاسبات التفاعلية</h2>
+            <div class="row g-4">
+                <!-- 1. حاسبة الأثر الكربوني -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 rounded-4 p-4 h-100">
+                        <h5 class="text-success fw-bold mb-3"><i class="fa-solid fa-calculator me-2"></i>حاسبة الأثر الكربوني</h5>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">الكهرباء شهرياً (كيلوواط):</label>
+                            <input type="number" id="electricity" class="form-control" placeholder="400">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">المواصلات أسبوعياً (كم):</label>
+                            <input type="number" id="transport" class="form-control" placeholder="100">
+                        </div>
+                        <button type="button" id="btn-carbon" class="btn btn-success w-100 rounded-pill fw-bold btn-sm">احسب أثرك الكربوني</button>
+                        
+                        <div id="carbon-result" class="mt-3 text-center d-none">
+                            <div class="alert alert-info py-2 small fw-bold" id="carbon-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. حاسبة غرس الأشجار -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 rounded-4 p-4 h-100">
+                        <h5 class="text-success fw-bold mb-3"><i class="fa-solid fa-tree me-2"></i>حاسبة غرس الأشجار</h5>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">عدد الأشجار المراد زراعتها:</label>
+                            <input type="number" id="treesCount" class="form-control" placeholder="1000">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">نوع الأشجار:</label>
+                            <select id="treeType" class="form-select">
+                                <option value="22">أشجار مثمرة (زيتون/جوافة)</option>
+                                <option value="25">أشجار ظلية بيئية</option>
+                            </select>
+                        </div>
+                        <button type="button" id="btn-tree" class="btn btn-success w-100 rounded-pill fw-bold btn-sm">احسب الفائدة البيئية</button>
+                        
+                        <div id="tree-result" class="mt-3 text-center d-none">
+                            <div class="alert alert-success py-2 small fw-bold" id="tree-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. مؤشر المدرسة الخضراء -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 rounded-4 p-4 h-100">
+                        <h5 class="text-success fw-bold mb-3"><i class="fa-solid fa-school me-2"></i>مؤشر المدرسة الخضراء</h5>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">مساحات خضراء بالمدرسة؟</label>
+                            <select id="schoolTrees" class="form-select">
+                                <option value="50">نعم، بكثرة</option>
+                                <option value="25">مساحات محدودة</option>
+                                <option value="0">لا يوجد</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label small fw-bold">فصل وإعادة تدوير النفايات؟</label>
+                            <select id="recycling" class="form-select">
+                                <option value="50">نعم يتم التدوير</option>
+                                <option value="0">لا</option>
+                            </select>
+                        </div>
+                        <button type="button" id="btn-school" class="btn btn-success w-100 rounded-pill fw-bold btn-sm">قياس تقييم المدرسة</button>
+                        
+                        <div id="school-result" class="mt-3 text-center d-none">
+                            <div class="alert alert-success py-2 small fw-bold" id="school-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section (اختبار الوعي المناخي) -->
+    <section id="quiz" class="py-5 bg-light">
+        <div class="container text-center" style="max-width: 700px;">
+            <h2 class="text-success fw-bold mb-4">اختبار الوعي المناخي (Quiz)</h2>
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                <div id="quiz-box">
+                    <h5 id="q-title" class="fw-bold mb-4">سؤال الاختبار سيظهر هنا...</h5>
+                    <div id="q-options" class="d-grid gap-2"></div>
+                </div>
+                <div id="q-result" class="mt-4 d-none">
+                    <h4 class="text-success fw-bold">أحسنت! أكملت الاختبار.</h4>
+                    <p id="q-score" class="fs-5"></p>
+                    <button id="btn-reset-quiz" class="btn btn-outline-success rounded-pill mt-2 fw-bold">إعادة الاختبار</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (الأسئلة الشائعة) -->
+    <section id="faq" class="py-5">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-success fw-bold text-center mb-4">الأسئلة الشائعة حول التغير المناخي</h2>
+            <div class="accordion shadow-sm rounded-4 overflow-hidden" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            ما هي أبرز جهود محافظة السويس في المبادرات الخضراء؟
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-start">
+                            تتركز جهود السويس في مشروعات الهيدروجين الأخضر بمحور قناة السويس، والتوسع في الطاقة الشمسية، وحماية البيئة البحرية والتنوع البيولوجي بخلجان السويس.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            كيف يمكن للطالب التقليل من أثره الكربوني في المدرسة؟
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-start">
+                            من خلال ترشيد استهلاك الكهرباء والماء، واستخدام زمزمية بدلاً من البلاستيك أحادي الاستخدام، والمشاركة في تشجير المدرسة وإعادة التدوير.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-success text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-1">جميع الحقوق محفوظة © 2026 - مشروع Climate Egypt</p>
+            <small>مدرسة السويس الثانوية بنات - جمهورية مصر العربية</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- البرمجة المباشرة الصريحة والمضمونة -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. حاسبة الكربون
+            document.getElementById('btn-carbon').onclick = function() {
+                var e = parseFloat(document.getElementById('electricity').value) || 400;
+                var t = parseFloat(document.getElementById('transport').value) || 100;
+                var total = (e * 0.5) + (t * 4 * 0.12);
+                
+                var resDiv = document.getElementById('carbon-result');
+                resDiv.classList.remove('d-none');
+                document.getElementById('carbon-text').innerHTML = 'الانبعاثات التقديرية: <br><span class="fs-5 text-dark">' + total.toFixed(1) + ' كجم CO2 / شهرياً</span>';
+            };
+
+            // 2. حاسبة الأشجار
+            document.getElementById('btn-tree').onclick = function() {
+                var c = parseInt(document.getElementById('treesCount').value) || 1000;
+                var f = parseFloat(document.getElementById('treeType').value) || 22;
+                var total = c * f;
+                
+                var resDiv = document.getElementById('tree-result');
+                resDiv.classList.remove('d-none');
+                document.getElementById('tree-text').innerHTML = 'زراعة ' + c + ' شجرة تمتص حوالي:<br><span class="fs-5 text-success">' + total.toLocaleString() + ' كجم CO2 سنوياً 🌳</span>';
+            };
+
+            // 3. حاسبة المدرسة الخضراء
+            document.getElementById('btn-school').onclick = function() {
+                var g = parseInt(document.getElementById('schoolTrees').value) || 50;
+                var r = parseInt(document.getElementById('recycling').value) || 50;
+                var score = g + r;
+                
+                var resDiv = document.getElementById('school-result');
+                resDiv.classList.remove('d-none');
+                var status = score >= 80 ? 'مدرسة خضراء نموذجية 🏆' : 'مدرسة صديقة للبيئة 🌿';
+                document.getElementById('school-text').innerHTML = 'التقييم: ' + score + '%<br>' + status;
+            };
+
+            // 4. اختبار الوعي المناخي
+            var quizQuestions = [
+                { q: "ما هو الغاز الرئيسي المسبب للاحتباس الحراري؟", opts: ["ثاني أكسيد الكربون (CO2)", "الأكسجين", "النيتروجين"], c: 0 },
+                { q: "أي مما يلي يعد مصدراً للطاقة النظيفة؟", opts: ["الفحم الحجري", "الطاقة الشمسية", "البترول"], c: 1 },
+                { q: "ما الهدف الرئيسي من الهيدروجين الأخضر بالسويس؟", opts: ["إنتاج طاقة خالية من الكربون", "زيادة استهلاك البترول", "قطع الأشجار"], c: 0 }
+            ];
+            var qIdx = 0, qScore = 0;
+
+            function renderQuiz() {
+                if (qIdx >= quizQuestions.length) {
+                    document.getElementById('quiz-box').classList.add('d-none');
+                    document.getElementById('quiz-result').classList.remove('d-none');
+                    document.getElementById('q-score').innerText = 'حصلت على ' + qScore + ' من ' + quizQuestions.length + ' إجابات صحيحة!';
+                    return;
+                }
+                var current = quizQuestions[qIdx];
+                document.getElementById('q-title').innerText = current.q;
+                var optDiv = document.getElementById('q-options');
+                optDiv.innerHTML = '';
+                current.opts.forEach(function(o, i) {
+                    var btn = document.createElement('button');
+                    btn.className = 'btn btn-outline-success text-start py-2 fw-bold';
+                    btn.innerText = o;
+                    btn.onclick = function() {
+                        if (i === current.c) qScore++;
+                        qIdx++;
+                        renderQuiz();
+                    };
+                    optDiv.appendChild(btn);
+                });
+            }
+
+            document.getElementById('btn-reset-quiz').onclick = function() {
+                qIdx = 0; qScore = 0;
+                document.getElementById('quiz-box').classList.remove('d-none');
+                document.getElementById('quiz-result').classList.add('d-none');
+                renderQuiz();
+            };
+
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>

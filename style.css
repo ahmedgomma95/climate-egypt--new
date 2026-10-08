@@ -1,0 +1,92 @@
+/* ==========================================
+   تنسيقات عصرية وتفاعلية كاملة - Climate Egypt
+   ========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111111;
+    background-color: #f4f7f4;
+}
+
+/* العناوين والنصوص الداكنة */
+h1, h2, h3, h4, h5, h6 {
+    color: #0d3b11 !important;
+    font-weight: 700 !important;
+}
+
+/* القائمة العلوية */
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    padding-bottom: 6px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    right: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+/* حركة الكروت والتفاعل */
+.card, #stats .rounded-4 {
+    background-color: #ffffff !important;
+    border: 1px solid #dcdcdc !important;
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease !important;
+    cursor: pointer;
+}
+
+.card:hover, #stats .rounded-4:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 15px 30px rgba(13, 59, 17, 0.25) !important;
+    border-color: #2e7d32 !important;
+}
+
+/* حركة الأيقونات والصور */
+img {
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+i.fa-3x {
+    transition: transform 0.35s ease !important;
+}
+
+.card:hover i, #stats .rounded-4:hover i {
+    transform: scale(1.2) rotate(6deg) !important;
+}
+
+/* الأزرار */
+.btn-success {
+    background-color: #2e7d32 !important;
+    border-color: #2e7d32 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-success:hover {
+    background-color: #1b5e20 !important;
+    border-color: #1b5e20 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35) !important;
+}
